@@ -68,3 +68,58 @@ test2.addEventListener('click', function() {
     t2Clicked = true;
   }
 });
+
+// Test 3 ---------------------------------------------------------------------
+// Get a ref to the image
+var test3C = document.getElementById('test3_container');
+var test3 = document.getElementById('test3_img');
+var curVal = 0, isDragging, initialX, xDisplacement = 0;
+
+// SpringSystem
+var t3Spring = springSystem.createSpring(80, 5);
+
+t3Spring.addListener({
+  onSpringUpdate: function( spring ) {
+    var val = t3Spring.getCurrentValue();
+    val = rebound.MathUtil.mapValueInRange(val, 0, 1, 1, 0.5);
+    pull( test3, val );
+  }
+});
+
+test3C.addEventListener('mousedown', function( e ) {
+  isDragging = true;
+  initialX = e.clientX;
+});
+
+test3C.addEventListener('mousemove', function( e ) {
+  if ( isDragging ) {
+    xDisplacement = e.clientX - initialX
+    // curVal += 5;
+    t3Spring.setCurrentValue( -xDisplacement );
+    t3Spring.setAtRest();
+  }
+});
+
+test3C.addEventListener('mouseup', function() {
+  curVal = 0;
+  t3Spring.setEndValue( 0 );
+  isDragging = false;
+});
+
+test3C.addEventListener('mouseleave', function() {
+  curVal = 0;
+  t3Spring.setEndValue( 0 );
+  isDragging = false;
+});
+
+function pull( el, val ) {
+  el.style.mozTransform =
+  el.style.msTransform =
+  el.style.webkitTransform =
+  el.style.transform = 'translate3d(' +
+    val + 'px, 0, 0)';
+}
+
+
+
+// Test 4 ---------------------------------------------------------------------

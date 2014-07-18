@@ -30,3 +30,25 @@
   max-width: 400px;
   max-height: 300px;
 }
+
+.img_thumbnail_trans {
+  max-width: 400px;
+  max-height: 300px;
+  -webkit-transition: 350ms;
+}
+
+.full-width {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#test3_img {
+  background-image: url('../images/sample1.jpg');
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

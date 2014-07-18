@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="screen">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+  <div id="super-container">
+    <header>
+      {{> header}}
+    </header>
+    <body>
+      <div class="container">
+        {{{body}}}
+      </div>
+    </body>
+    <footer>
+      {{> footer}}
+    </footer>
+  </div>
+</html>

@@ -43,3 +43,7 @@
 
 .size-96 {
   font-size: 96px; }
+
+.img_thumbnail {
+  max-width: 400px;
+  max-height: 300px; }

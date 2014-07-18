@@ -1,25 +1,41 @@
 <h1>Using Rebound</h1>
 
-<div class="test1">
-  <h3>Test 1</h3>
-  <p>Bounce when icon is clicked.</p>
-  <center>
-    <span class="step size-96" id="test1_btn">
-      <i class="icon ion-android-archive"></i>
-    </span>
-  </center>
-  <hr>
+<div class="panel panel-default test1">
+  <div class="panel-heading">
+    <h3 class="panel-title">Test 1</h3>
+  </div>
+  <div class="panel-body">
+    <p>Bounce when icon is clicked.</p>
+    <center>
+      <span class="step size-96" id="test1_btn">
+        <i class="icon ion-android-archive"></i>
+      </span>
+    </center>
+  </div>
 </div>
 
-<div class="test2">
-  <h3>Test 2</h3>
-  <span class="step size-96">
-    <i class="icon ion-android-arrow-back"></i>
-  </span>
-  <span class="step size-48">
-    <i class="icon ion-android-arrow-forward"></i>
-  </span>
-  <hr>
+<div class="panel panel-default test2">
+  <div class="panel-heading">
+    <h3 class="panel-title">Test 2</h3>
+  </div>
+  <div class="panel-body">
+    <p>Toggle between thumbnail and full-size.</p>
+    <center>
+      <img src="images/rebound/test2_image.jpg" class="img_thumbnail" id="test2_img"/>
+    </center>
+    <br>
+    <p class="small">*because rebound uses scale3d, nothing prevents the image from getting clipped.</p>
+  </div>
+</div>
+
+<div class="panel panel-default test3">
+  <div class="panel-heading">
+    <h3 class="panel-title">Test 3</h3>
+  </div>
+  <div class="panel-body">
+    <p>TBD</p>
+
+  </div>
 </div>
 
 <script src="javascripts/rebound.min.js"></script>

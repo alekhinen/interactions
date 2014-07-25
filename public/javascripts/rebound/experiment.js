@@ -93,7 +93,7 @@ test3C.addEventListener('mousedown', function( e ) {
 
 test3C.addEventListener('mousemove', function( e ) {
   if ( isDragging ) {
-    xDisplacement = e.clientX - initialX
+    xDisplacement = e.clientX - initialX;
     // curVal += 5;
     t3Spring.setCurrentValue( -xDisplacement );
     t3Spring.setAtRest();

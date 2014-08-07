@@ -130,8 +130,8 @@ force.on( 'tick', function( e ) {
   }
 
   svg.selectAll('circle')
-      .attr('cx', function(d) { return d.x; })
-      .attr('cy', function(d) { return d.y; });
+    .attr('cx', function(d) { return d.x; })
+    .attr('cy', function(d) { return d.y; });
 });
 
 svg.on('mousemove', function() {
@@ -139,6 +139,7 @@ svg.on('mousemove', function() {
   root.px = p1[0];
   root.py = p1[1];
   force.resume();
+  particle();
 });
 
 function collide(node) {
@@ -163,4 +164,23 @@ function collide(node) {
     }
     return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
   };
+}
+
+function particle() {
+  var m = d3.mouse(this);
+
+  svg.insert('circle', 'rect')
+      .attr('cx', m[0])
+      .attr('cy', m[1])
+      .attr('r', 1e-6)
+      .style('stroke', d3.hsl((i = (i + 1) % 360), 1, -0.5))
+      .style('stroke-opacity', 1)
+    .transition()
+      .duration(2000)
+      .ease(Math.sqrt)
+      .attr('r', 100)
+      .style('stroke-opacity', 1e-6)
+      .remove();
+
+  d3.event.preventDefault();
 }

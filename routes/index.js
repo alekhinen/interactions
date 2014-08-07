@@ -18,4 +18,12 @@ router.get('/d3', function( req, res ) {
   res.render('d3', { title: 'Using D3.js' });
 });
 
+router.get('/d3/mouseParticles', function( req, res ) {
+  res.render('d3/mouseParticles', { title: 'Mouse particles' });
+});
+
+router.get('/d3/barGraph', function( req, res ) {
+  res.render('d3/bar_graph', { title: 'D3 Bar Graph' });
+});
+
 module.exports = router;
